@@ -1,0 +1,6 @@
+samconfig.toml
+.aws-sam
+.idea
+.DS_Store
+.taskcat
+taskcat_outputs

@@ -1,0 +1,17 @@
+project:
+  name: quickstart-serverless-survey
+  owner: quickstart-eng@amazon.com
+  s3_regional_buckets: true
+  shorten_stack_name: true
+  package_lambda: false
+  regions:
+  - eu-central-1
+  s3_bucket: ''
+
+tests:
+  serverless-survey:
+    s3_bucket: ''
+    template: templates/serverless-survey.template.yaml
+    parameters:
+      ConfigFileLocation: '$[taskcat_autobucket]/quickstart-serverless-survey/scripts/config.yaml'
+
