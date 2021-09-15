@@ -1,10 +1,23 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
-Description: This Quick Start sets up a simple survey webpage using serverless-survey SAR application.
+Description: This Quick Start sets up a simple survey webpage using serverless-survey SAR application. (qs-1s9f5quuo)
+Metadata:
+  LintSpellExclude:
+    - yaml
+  'AWS::CloudFormation::Interface':
+    ParameterGroups:
+      - Label:
+          default: AWS Quick Start configuration
+        Parameters:
+          - ConfigFileLocation
+    ParameterLabels:
+      ConfigFileLocation:
+        default: Config file location
+
 Parameters:
   ConfigFileLocation:
     Description: Provide the S3 location of the survey configuration file.
-      For example, if the location is "s3://my-config-bucket/config.yaml,"" enter "my-config-bucket/config.yaml.""
+      For example, if the location is "s3://my-config-bucket/config.yaml,"" enter "my-config-bucket/config.yaml"".
     Type: String
 
 Resources:
@@ -26,12 +39,12 @@ Resources:
             Version: 2012-10-17
             Statement:
               - Action:
-                  - s3:*
-                Resource: !Sub "arn:aws:s3:::${ConfigFileLocation}"
+                  - s3:GetObject
+                Resource: !Sub "arn:${AWS::Partition}:s3:::${ConfigFileLocation}"
                 Effect: Allow
           PolicyName: config-file-s3-access
       ManagedPolicyArns:
-        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
   SurveyStack:
     Type: AWS::Serverless::Application
     Properties:
