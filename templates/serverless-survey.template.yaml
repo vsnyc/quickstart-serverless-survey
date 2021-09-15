@@ -4,7 +4,7 @@ Transform: AWS::Serverless-2016-10-31
 Parameters:
   ConfigFileLocation:
     Description: Provide the S3 location of the survey configuration file.
-      For example, if the location is "s3://my-config-bucket/config.yaml,"" enter "my-config-bucket/config.yaml.""
+      For example, if the location is "s3://my-config-bucket/config.yaml,"" enter "my-config-bucket/config.yaml"".
     Type: String
 
 Resources:
