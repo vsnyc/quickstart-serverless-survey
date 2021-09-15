@@ -8,7 +8,7 @@ Questions:
     Label: What is your email?
   Question2:
     Type: Text
-    Label: Rate your familiarity with CloudFormation on a scale of 1-5 (1 = novice; 5 = expert).
+    Label: Rate your familiarity with AWS CloudFormation on a scale of 1-5 (1 = novice; 5 = expert).
   Question3:
     Type: Radio
     Label: Would you like to do it again?
