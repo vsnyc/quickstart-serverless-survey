@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
-Description: This Quick Start sets up a simple survey webpage using serverless-survey SAR application.
+Description: This master template sets up a simple survey webpage using serverless-survey SAR application.
 Parameters:
   ConfigFileLocation:
     Description: Provide the S3 location of the survey configuration file.
